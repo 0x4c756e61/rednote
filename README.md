@@ -1,0 +1,2 @@
+# rednote
+Custom pronote theme
