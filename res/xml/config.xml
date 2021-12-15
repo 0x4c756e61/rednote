@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget android-versionCode="155" defaultlocale="fr-FR" id="com.IndexEducation.Pronote" ios-CFBundleIdentifier="com.IndexEducation.PronoteMobile" packageName="IndexEducation.PRONOTEMobile" version="0.1.55" xmlns="http://www.w3.org/ns/widgets"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Base64ToGallery">
+        <param name="android-package" value="it.nexxa.base64ToGallery.Base64ToGallery" />
+    </feature>
+    <feature name="AppVersion">
+        <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
+    </feature>
+    <feature name="Calendar">
+        <param name="android-package" value="nl.xservices.plugins.Calendar" />
+    </feature>
+    <feature name="CookieMaster">
+        <param name="android-package" value="org.apache.cordova.cookie.CookieMaster" />
+    </feature>
+    <feature name="LaunchMyApp">
+        <param name="android-package" value="nl.xservices.plugins.LaunchMyApp" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
+    <feature name="Globalization">
+        <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="LocalNotification">
+        <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification" />
+    </feature>
+    <feature name="NativeStorage">
+        <param name="android-package" value="NativeStorage" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="BarcodeScanner">
+        <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+    </feature>
+    <feature name="DocumentHandler">
+        <param name="android-package" value="ch.ti8m.phonegap.plugins.DocumentHandler" />
+    </feature>
+    <feature name="FCMHMSPlugin">
+        <param name="android-package" value="org.apache.cordova.fcmhms.FCMHMSPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Badge">
+        <param name="android-package" value="de.appplant.cordova.plugin.badge.Badge" />
+    </feature>
+    <feature name="CDVIonicKeyboard">
+        <param name="android-package" onload="true" value="io.ionic.keyboard.CDVIonicKeyboard" />
+    </feature>
+    <name>PRONOTE</name>
+    <description>L'application PRONOTE pour les mobiles</description>
+    <author email="pronote-mobile@index-education.fr" href="http://www.index-education.fr">Index Education</author>
+    <access allows-arbitrary-loads-in-web-content="true" origin="*" />
+    <allow-navigation href="https://*.index-education.net/*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="intent:*" />
+    <allow-intent href="blob:*" />
+    <hook src="scripts/project_files.js" type="before_prepare" />
+    <hook src="scripts/patch_files.js" type="before_prepare" />
+    <hook src="scripts/resource_files.js" type="before_prepare" />
+    <hook src="scripts/traductions.js" type="before_prepare" />
+    <content src="index.html" />
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="res/android/ldpi.png" />
+    <icon density="mdpi" src="res/android/mdpi.png" />
+    <icon density="hdpi" src="res/android/hdpi.png" />
+    <icon density="xhdpi" src="res/android/xhdpi.png" />
+    <icon density="xxhdpi" src="res/android/xxhdpi.png" />
+    <icon density="xxxhdpi" src="res/android/xxxhdpi.png" />
+    <splash density="hdpi" src="res/android/splash-port-hdpi.png" />
+    <splash density="ldpi" src="res/android/splash-port-ldpi.png" />
+    <splash density="mdpi" src="res/android/splash-port-mdpi.png" />
+    <splash density="xhdpi" src="res/android/splash-port-xhdpi.png" />
+    <splash density="xxhdpi" src="res/android/splash-port-xhdpi.png" />
+    <splash density="xxxhdpi" src="res/android/splash-port-xhdpi.png" />
+    <splash density="land-hdpi" src="res/android/splash-land-hdpi.png" />
+    <splash density="land-ldpi" src="res/android/splash-land-ldpi.png" />
+    <splash density="land-mdpi" src="res/android/splash-land-mdpi.png" />
+    <splash density="land-xhdpi" src="res/android/splash-land-xhdpi.png" />
+    <splash density="land-xxhdpi" src="res/android/splash-land-xhdpi.png" />
+    <splash density="land-xxxhdpi" src="res/android/splash-land-xhdpi.png" />
+    <splash density="port-hdpi" src="res/android/splash-port-hdpi.png" />
+    <splash density="port-ldpi" src="res/android/splash-port-ldpi.png" />
+    <splash density="port-mdpi" src="res/android/splash-port-mdpi.png" />
+    <splash density="port-xhdpi" src="res/android/splash-port-xhdpi.png" />
+    <splash density="port-xxhdpi" src="res/android/splash-port-xhdpi.png" />
+    <splash density="port-xxxhdpi" src="res/android/splash-port-xhdpi.png" />
+    <custom-preference name="android-manifest/application/activity/@android:theme" value="@android:style/Theme.NoTitleBar.Fullscreen" />
+    <custom-preference name="android-manifest/application/activity[@android:name='MainActivity']/@android:windowSoftInputMode" value="stateHidden|adjustResize" />
+    <custom-preference name="android-manifest/application/@android:usesCleartextTraffic" value="true" />
+    <custom-preference name="AndroidPersistentFileLocation" value="Internal" />
+    <config-file parent="./application" target="AndroidManifest.xml">
+        <meta-data android:name="com.huawei.hms.client.appid" android:value="appid=101736703" />
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/notif_smallicon" />
+    </config-file>
+    <config-file parent="./" target="AndroidManifest.xml">
+        <uses-permission android:name="android.permission.RECORD_AUDIO" />
+        <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    </config-file>
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#ff21874a" />
+    <preference name="SplashScreen" value="resourcename" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="1000" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="SplashShowOnlyFirstTime" value="true" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value="250" />
+    <preference name="SplashScreenBackgroundColor" value="#ffffffff" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackgroundColor" value="#ffffffff" />
+    <preference name="AppendUserAgent" value=" PRONOTE Mobile APP Version/0.1.55" />
+    <preference name="android-targetSdkVersion" value="29" />
+    <preference name="android-minSdkVersion" value="22" />
+    <preference name="InAppBrowserStorageEnabled " value="false" />
+    <preference name="LoadUrlTimeoutValue " value="5000" />
+    <preference name="resizeOnFullScreen" value="true" />
+    <preference name="AndroidXEnabled" value="true" />
+    <preference name="GradlePluginKotlinEnabled" value="true" />
+</widget>

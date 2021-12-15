@@ -1,0 +1,38 @@
+html {
+    /* Change the app background */
+    background-color: #3c3e42;
+}
+
+body *{
+    /* text color */
+    --text-color: white;
+    color: var(--text-color);
+}
+
+.ThemeMobilePN {
+    --theme-foncee: #d0615d; /*Main Color*/
+    --theme-moyen1: #e86c68; /*Snd Color*/  /*Bandeau Only*/
+    --theme-claire: #ff7472; /*Third Color*//*Bandeau Only*/
+}
+
+.sidenav.aside-nav-right {
+    /* Side nav bar coloration */
+    --nav-color: #232527;        /*Righ pannel*/
+    --nav-panel-color: #1a1b1d;  /*Left Pannel*/
+    background: linear-gradient(to right, var(--nav-color) 0, var(--nav-color) calc(100% - 70px), var(--nav-panel-color) calc(100% - 70px), var(--nav-panel-color) 100%);
+}
+
+.collection li.with-action {
+    /* Buttons background */
+    background-color: #1b1c1e;
+}
+
+#idPreloaderText {
+    overflow:hidden;
+    position:absolute;
+    top:calc(50% + 64px + 5px);
+    left:0;
+    width:100%;
+    text-align:center;
+    color: var(--text-color);
+}
