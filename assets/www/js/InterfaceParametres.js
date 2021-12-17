@@ -42,7 +42,7 @@ InterfaceParametres.prototype.construire = function () {
             '<span style="position:absolute; right:5px;" class="lever"></span>',
             '</label></div>');
   H.push('</li>');
-// Mod to test ALERT IS WORKING
+// Mod
   H.push('<li role="listitem" class="collection-item with-action">');
   H.push('<div style="width: 100%;"><label class="title" style="display: block; width: 100%;">',
             'Theme name:',
@@ -108,8 +108,8 @@ InterfaceParametres.prototype.changeCrash = function (aValue) {
 };
 
 InterfaceParametres.prototype.testFunc = function (aValue) {
-  var loc = window.location.pathname;
-  var dir = loc.substring(0, loc.lastIndexOf('/'));
+  // var loc = window.location.pathname;
+  // var dir = loc.substring(0, loc.lastIndexOf('/'));
   // alert(dir)
   if (aValue === "pornote") {
     document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `
@@ -153,8 +153,9 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
       color: var(--text-color);
   }
     </style>
-    `)
-    alert("Theme loaded")
+    `);
+    document.getElementById("logobruh").setAttribute("src", "images/mobile/logo-pn.png");
+    document.getElementById("logo_pannel").setAttribute("src", "images/mobile/logo-pn.png");
   }
 
   else if (aValue === "default") {
@@ -199,11 +200,58 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
       color: var(--text-color);
   }
   </style>
-    `)
+    `);
+    document.getElementById("logobruh").setAttribute("src", "images/mobile/ldpi.png");
+    document.getElementById("logo_pannel").setAttribute("src", "images/mobile/ldpi.png");
+  }
+
+  else if (aValue === "classic") {
+    document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `
+  <style>
+  html {
+      /* Change the app background */
+      background-color: #d9d9d9;
+  }
+  
+  body *{
+      /* text color */
+      --text-color: grey;
+      color: var(--text-color);
+  }
+  
+  .ThemeMobilePN {
+    --theme-foncee: #00643c;
+    --theme-moyen1: #65b782;
+    --theme-claire: #caefe1;
+}
+  
+  .sidenav.aside-nav-right {
+      background: linear-gradient(to right, #46484d 0, #46484d calc(100% - 70px), #d9d9d9 calc(100% - 70px), #d9d9d9 100%);
+      color: #d9d9d9;
+  }
+  
+  .collection li.with-action {
+      /* Buttons background */
+      background-color: #ffffff;
+  }
+  
+  #idPreloaderText {
+      overflow:hidden;
+      position:absolute;
+      top:calc(50% + 64px + 5px);
+      left:0;
+      width:100%;
+      text-align:center;
+      color: var(--text-color);
+  }
+  </style>
+    `);
+    document.getElementById("logobruh").setAttribute("src", "images/mobile/classic.png");
+    document.getElementById("logo_pannel").setAttribute("src", "images/mobile/classic.png");
   }
 
   else {
-    alert("Unknow theme")
+    alert("Unknow theme");
   }
 }
 

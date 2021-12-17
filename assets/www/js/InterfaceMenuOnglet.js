@@ -16,7 +16,7 @@ InterfaceMenuOnglet.prototype.construire = function () {
     '<header class="user-container">',
     '<div class="user-container-profil">',
     '<div class="membre-photo_container">',
-    '<div class="membre-photo"><img src="images/mobile/ldpi.png" alt="logo" role="presentation" /></div>',
+    '<div class="membre-photo"><img src="images/mobile/ldpi.png" alt="logo" id="logo_pannel" role="presentation" /></div>',
     '<span class="label-membre firstLand" role="heading" tabIndex="0">' + GTraductions.getValeur('titreApplication') + '</span>',
     '</div>',
     '</div>',
