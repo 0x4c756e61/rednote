@@ -42,6 +42,16 @@ InterfaceParametres.prototype.construire = function () {
             '<span style="position:absolute; right:5px;" class="lever"></span>',
             '</label></div>');
   H.push('</li>');
+// Mod to test ALERT IS WORKING
+  H.push('<li role="listitem" class="collection-item with-action">');
+  H.push('<div style="width: 100%;"><label class="title" style="display: block; width: 100%;">',
+            'Theme name:',
+            // '<input class="IFC_Parametre_AvecACE" type="text" ', '', ' onchange="', this.nom, '.testFunc(this.nom);"/>',
+            `<input class="IFC_Parametre_AvecACE" type="text" onchange="${this.nom}.testFunc(this.value);"/>`,
+            '<span style="position:absolute; right:5px;" class="lever"></span>',
+            '</label></div>');
+  H.push('</li>');
+
   if (GApplication.configUtil && GApplication.configUtil.subscriptions) {
     for (var key in GApplication.configUtil.subscriptions) {
 
@@ -96,6 +106,106 @@ InterfaceParametres.prototype.changeCrash = function (aValue) {
     window.FCMHMSPlugin.setPerformanceCollectionEnabled(false);
   }
 };
+
+InterfaceParametres.prototype.testFunc = function (aValue) {
+  var loc = window.location.pathname;
+  var dir = loc.substring(0, loc.lastIndexOf('/'));
+  // alert(dir)
+  if (aValue === "pornote") {
+    document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `
+    <style>
+  html {
+
+      background-color: #000000;
+  }
+  
+  body *{
+      /* text color */
+      --text-color: #bc7100;
+      color: var(--text-color);
+  }
+  
+  .ThemeMobilePN {
+    --theme-foncee: #FF9900;
+    --theme-moyen1: #d07d00;
+    --theme-claire: #bc7100;
+}
+  
+  .sidenav.aside-nav-right {
+
+      --nav-color: #232527;
+      --nav-panel-color: #1a1b1d;
+      background: linear-gradient(to right, var(--nav-color) 0, var(--nav-color) calc(100% - 70px), var(--nav-panel-color) calc(100% - 70px), var(--nav-panel-color) 100%);
+  }
+  
+  .collection li.with-action {
+      /* Buttons background */
+      background-color: #000000;
+  }
+  
+  #idPreloaderText {
+      overflow:hidden;
+      position:absolute;
+      top:calc(50% + 64px + 5px);
+      left:0;
+      width:100%;
+      text-align:center;
+      color: var(--text-color);
+  }
+    </style>
+    `)
+    alert("Theme loaded")
+  }
+
+  else if (aValue === "default") {
+    document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `
+  <style>
+  html {
+      /* Change the app background */
+      background-color: #3c3e42;
+  }
+  
+  body *{
+      /* text color */
+      --text-color: white;
+      color: var(--text-color);
+  }
+  
+  .ThemeMobilePN {
+    --theme-foncee: #d0615d;
+    --theme-moyen1: #e86c68;
+    --theme-claire: #ff7472;
+}
+  
+  .sidenav.aside-nav-right {
+      /* Side nav bar coloration */
+      --nav-color: #232527;        /*Righ pannel*/
+      --nav-panel-color: #1a1b1d;  /*Left Pannel*/
+      background: linear-gradient(to right, var(--nav-color) 0, var(--nav-color) calc(100% - 70px), var(--nav-panel-color) calc(100% - 70px), var(--nav-panel-color) 100%);
+  }
+  
+  .collection li.with-action {
+      /* Buttons background */
+      background-color: #1b1c1e;
+  }
+  
+  #idPreloaderText {
+      overflow:hidden;
+      position:absolute;
+      top:calc(50% + 64px + 5px);
+      left:0;
+      width:100%;
+      text-align:center;
+      color: var(--text-color);
+  }
+  </style>
+    `)
+  }
+
+  else {
+    alert("Unknow theme")
+  }
+}
 
 InterfaceParametres.prototype.changeSubscription = function (aValue, aName) {
   GApplication.log(GApplication.niveauxLog.TRACE, 'changeSubscription()');
