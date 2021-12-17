@@ -167,6 +167,37 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
       text-align:center;
       color: var(--text-color);
   }
+
+  #cssarea {
+      border: none;
+      background-color: #000000;
+      font-size: .7em;
+      font-weight: 100;
+      margin-top: 3%;
+      border-bottom: 1px solid #9c9e9f !important;
+      height: 20%;
+      transition: border-bottom 1s;
+
+  }
+  #cssarea:focus {
+      border-bottom: 2px solid var(--theme-foncee) !important;
+  }
+
+  #cssset {
+      margin-top: 5%;
+      width: 100%;
+      height: 4%;
+      color: white;
+      align-items: center;
+      text-decoration: none;
+      border: none;
+      background-color: var(--theme-claire);
+      transition: background-color 1s;
+  }
+
+  #cssset:focus {
+      background-color: var(--theme-foncee);
+  }
     </style>
     `);
     document.getElementById("logobruh").setAttribute("src", "images/mobile/logo-pn.png");
@@ -214,6 +245,36 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
       text-align:center;
       color: var(--text-color);
   }
+
+  #cssarea {
+      border: none;
+      background-color: #1b1c1e;
+      font-size: .7em;
+      font-weight: 100;
+      margin-top: 3%;
+      border-bottom: 1px solid #9c9e9f !important;
+      height: 20%;
+      transition: border-bottom 1s;
+
+  }
+  #cssarea:focus {
+      border-bottom: 2px solid var(--theme-foncee) !important;
+  }
+
+  #cssset {
+      margin-top: 5%;
+      width: 100%;
+      height: 4%;
+      align-items: center;
+      text-decoration: none;
+      border: none;
+      background-color: var(--theme-claire);
+      transition: background-color 1s;
+  }
+
+  #cssset:focus {
+      background-color: var(--theme-foncee);
+  }
   </style>
     `);
     document.getElementById("logobruh").setAttribute("src", "images/mobile/ldpi.png");
@@ -238,7 +299,7 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
     --theme-foncee: #00643c;
     --theme-moyen1: #65b782;
     --theme-claire: #caefe1;
-}
+  }
   
   .sidenav.aside-nav-right {
       background: linear-gradient(to right, #46484d 0, #46484d calc(100% - 70px), #d9d9d9 calc(100% - 70px), #d9d9d9 100%);
@@ -258,6 +319,35 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
       width:100%;
       text-align:center;
       color: var(--text-color);
+  }
+  #cssarea {
+      border: none;
+      background-color: #ffffff;
+      font-size: .7em;
+      font-weight: 100;
+      margin-top: 3%;
+      border-bottom: 1px solid #9c9e9f !important;
+      height: 20%;
+      transition: border-bottom 1s;
+
+  }
+  #cssarea:focus {
+      border-bottom: 2px solid var(--theme-foncee) !important;
+  }
+
+  #cssset {
+      margin-top: 5%;
+      width: 100%;
+      height: 4%;
+      align-items: center;
+      text-decoration: none;
+      border: none;
+      background-color: var(--theme-claire);
+      transition: background-color 1s;
+  }
+
+  #cssset:focus {
+      background-color: var(--theme-foncee);
   }
   </style>
     `);
