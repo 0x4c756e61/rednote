@@ -21,6 +21,7 @@ To use themes
 2) in the `Theme name` section enters
  - default | For the default red theme
  - pornote | For a pornhub like experience
+ - classic | Default Pronote theme (wrong colors tho) 
 
 ---
 
