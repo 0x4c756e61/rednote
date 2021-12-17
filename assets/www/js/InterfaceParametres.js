@@ -42,12 +42,20 @@ InterfaceParametres.prototype.construire = function () {
             '<span style="position:absolute; right:5px;" class="lever"></span>',
             '</label></div>');
   H.push('</li>');
-// Mod
+// Theme selector
   H.push('<li role="listitem" class="collection-item with-action">');
   H.push('<div style="width: 100%;"><label class="title" style="display: block; width: 100%;">',
             'Theme name:',
-            // '<input class="IFC_Parametre_AvecACE" type="text" ', '', ' onchange="', this.nom, '.testFunc(this.nom);"/>',
             `<input class="IFC_Parametre_AvecACE" type="text" onchange="${this.nom}.testFunc(this.value);"/>`,
+            '<span style="position:absolute; right:5px;" class="lever"></span>',
+            '</label></div>');
+  H.push('</li>');
+// Custom CSS input
+  H.push('<li role="listitem" class="collection-item with-action">');
+  H.push('<div style="width: 100%;"><label class="title" style="display: block; width: 100%;">',
+            'Custom CSS: <br>',
+            `<textarea id="cssarea" placeholder="Enter some CSS style"></textarea>`,
+            `<button id="cssset" onclick="${this.nom}.ee();">SET CSS</button>`,
             '<span style="position:absolute; right:5px;" class="lever"></span>',
             '</label></div>');
   H.push('</li>');
@@ -105,6 +113,13 @@ InterfaceParametres.prototype.changeCrash = function (aValue) {
   } else {
     window.FCMHMSPlugin.setPerformanceCollectionEnabled(false);
   }
+};
+
+InterfaceParametres.prototype.ee = function () {
+  let area = document.getElementById("cssarea");
+  document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `<style>${area.value}</style>`)
+  alert("Style set !")
+
 };
 
 InterfaceParametres.prototype.testFunc = function (aValue) {
@@ -251,9 +266,9 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
   }
 
   else {
-    alert("Unknow theme");
+    alert(`Unknow theme: ${aValue}`);
   }
-}
+};
 
 InterfaceParametres.prototype.changeSubscription = function (aValue, aName) {
   GApplication.log(GApplication.niveauxLog.TRACE, 'changeSubscription()');
