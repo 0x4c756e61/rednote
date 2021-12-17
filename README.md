@@ -15,6 +15,15 @@ You have to do that one time **only**
 
 ---
 
+## Using themes
+To use themes
+1) Go to settings
+2) in the `Theme name` section enters
+ - default | For the default red theme
+ - pornote | For a pornhub like experience
+
+---
+
 ## Building
 ### Requirements
 - APKTOOL
