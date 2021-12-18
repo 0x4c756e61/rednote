@@ -1,4 +1,4 @@
-if ( window.localStorage.getItem("custom_css") != null ) {
+if ( window.localStorage.getItem("custom_css") != null && window.localStorage.getItem("custom_css") != "" ) {
     document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", window.localStorage.getItem("custom_css"))
 };
 if ( window.localStorage.getItem("custom_css_theme") != "" ) {
