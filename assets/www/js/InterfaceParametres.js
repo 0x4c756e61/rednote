@@ -55,7 +55,7 @@ InterfaceParametres.prototype.construire = function () {
   H.push('<div style="width: 100%;"><label class="title" style="display: block; width: 100%;">',
             'Custom CSS: <br>',
             `<textarea id="cssarea" placeholder="Enter some CSS style"></textarea>`,
-            `<button id="cssset" onclick="${this.nom}.ee();">SET CSS</button>`,
+            `<button id="cssset" onclick="${this.nom}.setCustomCSS();">SET CSS</button>`,
             '<span style="position:absolute; right:5px;" class="lever"></span>',
             '</label></div>');
   H.push('</li>');
@@ -115,10 +115,11 @@ InterfaceParametres.prototype.changeCrash = function (aValue) {
   }
 };
 
-InterfaceParametres.prototype.ee = function () {
+InterfaceParametres.prototype.setCustomCSS = function () {
   let area = document.getElementById("cssarea");
-  document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `<style>${area.value}</style>`)
-  alert("Style set !")
+  window.localStorage.setItem("custom_css", `<style>${area.value}</style>`);
+  document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `<style>${area.value}</style>`);
+  alert("Style set !");
 
 };
 
@@ -127,7 +128,7 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
   // var dir = loc.substring(0, loc.lastIndexOf('/'));
   // alert(dir)
   if (aValue === "pornote") {
-    document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `
+    let custom_css_theme = `
     <style>
   html {
 
@@ -199,158 +200,167 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
       background-color: var(--theme-foncee);
   }
     </style>
-    `);
+    `;
+    document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", custom_css_theme);
+    window.localStorage.setItem('custom_css_theme', custom_css_theme);
+    window.localStorage.setItem('custom_css_theme_img',"images/mobile/logo-pn.png");
     document.getElementById("logobruh").setAttribute("src", "images/mobile/logo-pn.png");
     document.getElementById("logo_pannel").setAttribute("src", "images/mobile/logo-pn.png");
   }
 
   else if (aValue === "default") {
-    document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `
-  <style>
-  html {
-      /* Change the app background */
-      background-color: #3c3e42;
+    let custom_css_theme = `
+    <style>
+    html {
+        /* Change the app background */
+        background-color: #3c3e42;
+    }
+    
+    body *{
+        /* text color */
+        --text-color: white;
+        color: var(--text-color);
+    }
+    
+    .ThemeMobilePN {
+      --theme-foncee: #d0615d;
+      --theme-moyen1: #e86c68;
+      --theme-claire: #ff7472;
   }
+    
+    .sidenav.aside-nav-right {
+        /* Side nav bar coloration */
+        --nav-color: #232527;        /*Righ pannel*/
+        --nav-panel-color: #1a1b1d;  /*Left Pannel*/
+        background: linear-gradient(to right, var(--nav-color) 0, var(--nav-color) calc(100% - 70px), var(--nav-panel-color) calc(100% - 70px), var(--nav-panel-color) 100%);
+    }
+    
+    .collection li.with-action {
+        /* Buttons background */
+        background-color: #1b1c1e;
+    }
+    
+    #idPreloaderText {
+        overflow:hidden;
+        position:absolute;
+        top:calc(50% + 64px + 5px);
+        left:0;
+        width:100%;
+        text-align:center;
+        color: var(--text-color);
+    }
   
-  body *{
-      /* text color */
-      --text-color: white;
-      color: var(--text-color);
-  }
+    #cssarea {
+        border: none;
+        background-color: #1b1c1e;
+        font-size: .7em;
+        font-weight: 100;
+        margin-top: 3%;
+        border-bottom: 1px solid #9c9e9f !important;
+        height: 20%;
+        transition: border-bottom 1s;
   
-  .ThemeMobilePN {
-    --theme-foncee: #d0615d;
-    --theme-moyen1: #e86c68;
-    --theme-claire: #ff7472;
-}
+    }
+    #cssarea:focus {
+        border-bottom: 2px solid var(--theme-foncee) !important;
+    }
   
-  .sidenav.aside-nav-right {
-      /* Side nav bar coloration */
-      --nav-color: #232527;        /*Righ pannel*/
-      --nav-panel-color: #1a1b1d;  /*Left Pannel*/
-      background: linear-gradient(to right, var(--nav-color) 0, var(--nav-color) calc(100% - 70px), var(--nav-panel-color) calc(100% - 70px), var(--nav-panel-color) 100%);
-  }
+    #cssset {
+        margin-top: 5%;
+        width: 100%;
+        height: 4%;
+        align-items: center;
+        text-decoration: none;
+        border: none;
+        background-color: var(--theme-claire);
+        transition: background-color 1s;
+    }
   
-  .collection li.with-action {
-      /* Buttons background */
-      background-color: #1b1c1e;
-  }
-  
-  #idPreloaderText {
-      overflow:hidden;
-      position:absolute;
-      top:calc(50% + 64px + 5px);
-      left:0;
-      width:100%;
-      text-align:center;
-      color: var(--text-color);
-  }
-
-  #cssarea {
-      border: none;
-      background-color: #1b1c1e;
-      font-size: .7em;
-      font-weight: 100;
-      margin-top: 3%;
-      border-bottom: 1px solid #9c9e9f !important;
-      height: 20%;
-      transition: border-bottom 1s;
-
-  }
-  #cssarea:focus {
-      border-bottom: 2px solid var(--theme-foncee) !important;
-  }
-
-  #cssset {
-      margin-top: 5%;
-      width: 100%;
-      height: 4%;
-      align-items: center;
-      text-decoration: none;
-      border: none;
-      background-color: var(--theme-claire);
-      transition: background-color 1s;
-  }
-
-  #cssset:focus {
-      background-color: var(--theme-foncee);
-  }
-  </style>
-    `);
+    #cssset:focus {
+        background-color: var(--theme-foncee);
+    }
+    </style>
+      `;
+    document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", custom_css_theme);
+    window.localStorage.setItem('custom_css_theme', custom_css_theme);
+    window.localStorage.setItem('custom_css_theme_img',"images/mobile/ldpi.png");
     document.getElementById("logobruh").setAttribute("src", "images/mobile/ldpi.png");
     document.getElementById("logo_pannel").setAttribute("src", "images/mobile/ldpi.png");
   }
 
   else if (aValue === "classic") {
-    document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `
-  <style>
-  html {
-      /* Change the app background */
-      background-color: #d9d9d9;
-  }
+    let custom_css_theme = `
+    <style>
+    html {
+        /* Change the app background */
+        background-color: #d9d9d9;
+    }
+    
+    body *{
+        /* text color */
+        --text-color: grey;
+        color: var(--text-color);
+    }
+    
+    .ThemeMobilePN {
+      --theme-foncee: #00643c;
+      --theme-moyen1: #65b782;
+      --theme-claire: #caefe1;
+    }
+    
+    .sidenav.aside-nav-right {
+        background: linear-gradient(to right, #46484d 0, #46484d calc(100% - 70px), #d9d9d9 calc(100% - 70px), #d9d9d9 100%);
+        color: #d9d9d9;
+    }
+    
+    .collection li.with-action {
+        /* Buttons background */
+        background-color: #ffffff;
+    }
+    
+    #idPreloaderText {
+        overflow:hidden;
+        position:absolute;
+        top:calc(50% + 64px + 5px);
+        left:0;
+        width:100%;
+        text-align:center;
+        color: var(--text-color);
+    }
+    #cssarea {
+        border: none;
+        background-color: #ffffff;
+        font-size: .7em;
+        font-weight: 100;
+        margin-top: 3%;
+        border-bottom: 1px solid #9c9e9f !important;
+        height: 20%;
+        transition: border-bottom 1s;
   
-  body *{
-      /* text color */
-      --text-color: grey;
-      color: var(--text-color);
-  }
+    }
+    #cssarea:focus {
+        border-bottom: 2px solid var(--theme-foncee) !important;
+    }
   
-  .ThemeMobilePN {
-    --theme-foncee: #00643c;
-    --theme-moyen1: #65b782;
-    --theme-claire: #caefe1;
-  }
+    #cssset {
+        margin-top: 5%;
+        width: 100%;
+        height: 4%;
+        align-items: center;
+        text-decoration: none;
+        border: none;
+        background-color: var(--theme-claire);
+        transition: background-color 1s;
+    }
   
-  .sidenav.aside-nav-right {
-      background: linear-gradient(to right, #46484d 0, #46484d calc(100% - 70px), #d9d9d9 calc(100% - 70px), #d9d9d9 100%);
-      color: #d9d9d9;
-  }
-  
-  .collection li.with-action {
-      /* Buttons background */
-      background-color: #ffffff;
-  }
-  
-  #idPreloaderText {
-      overflow:hidden;
-      position:absolute;
-      top:calc(50% + 64px + 5px);
-      left:0;
-      width:100%;
-      text-align:center;
-      color: var(--text-color);
-  }
-  #cssarea {
-      border: none;
-      background-color: #ffffff;
-      font-size: .7em;
-      font-weight: 100;
-      margin-top: 3%;
-      border-bottom: 1px solid #9c9e9f !important;
-      height: 20%;
-      transition: border-bottom 1s;
-
-  }
-  #cssarea:focus {
-      border-bottom: 2px solid var(--theme-foncee) !important;
-  }
-
-  #cssset {
-      margin-top: 5%;
-      width: 100%;
-      height: 4%;
-      align-items: center;
-      text-decoration: none;
-      border: none;
-      background-color: var(--theme-claire);
-      transition: background-color 1s;
-  }
-
-  #cssset:focus {
-      background-color: var(--theme-foncee);
-  }
-  </style>
-    `);
+    #cssset:focus {
+        background-color: var(--theme-foncee);
+    }
+    </style>
+      `;
+    document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", custom_css_theme);
+    window.localStorage.setItem('custom_css_theme', custom_css_theme);
+    window.localStorage.setItem('custom_css_theme_img',"images/mobile/classic.png");
     document.getElementById("logobruh").setAttribute("src", "images/mobile/classic.png");
     document.getElementById("logo_pannel").setAttribute("src", "images/mobile/classic.png");
   }
