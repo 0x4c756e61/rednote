@@ -1,4 +1,4 @@
-const current_ver = "v3"
+const current_ver = "v4"
 
 fetch('https://github.com/0x454d505459/rednote/releases')
 .then(r => r.text())
