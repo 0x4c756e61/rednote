@@ -365,9 +365,22 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
     document.getElementById("logo_pannel").setAttribute("src", "images/mobile/classic.png");
   }
 
+  
   else {
-    alert(`Unknow theme: ${aValue}`);
-  }
+    // alert(`Unknow theme: ${aValue}`);
+    fetch(`https://raw.githubusercontent.com/0x454d505459/rednote-themes/main/${aValue}.css`)
+    .then(r => r.text())
+    .then(style => {
+      if (style === "404: Not Found") {
+        alert(`Theme not found: ${aValue}`)
+      }
+      else {
+        // alert(style)
+        document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `<style>${style}</style>`);
+        window.localStorage.setItem('custom_css_theme', `<style>${style}</style>`);
+      };
+    })
+  };
 };
 
 InterfaceParametres.prototype.changeSubscription = function (aValue, aName) {
