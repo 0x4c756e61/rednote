@@ -367,19 +367,24 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
 
   
   else {
-    // alert(`Unknow theme: ${aValue}`);
-    fetch(`https://raw.githubusercontent.com/0x454d505459/rednote-themes/main/${aValue}.css`)
-    .then(r => r.text())
-    .then(style => {
-      if (style === "404: Not Found") {
-        navigator.notification.alert(`Theme not found: ${aValue}`, null, `Themes manager`);
-      }
-      else {
-        // alert(style)
-        document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `<style>${style}</style>`);
-        window.localStorage.setItem('custom_css_theme', `<style>${style}</style>`);
-      };
-    })
+    if (aValue.slice(0,7) === "online:") {
+      // alert(`Unknow theme: ${aValue}`);
+      fetch(`https://raw.githubusercontent.com/0x454d505459/rednote-themes/main/${aValue.slice(7)}.css`)
+      .then(r => r.text())
+      .then(style => {
+        if (style === "404: Not Found") {
+          navigator.notification.alert(`Theme not found: ${aValue}`, null, `Themes manager`);
+        }
+        else {
+          // alert(style)
+          document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `<style>${style}</style>`);
+          window.localStorage.setItem('custom_css_theme', `<style>${style}</style>`);
+        };
+      })
+    }
+    else {
+      navigator.notification.alert(`Theme not found: ${aValue}`, null, `Themes manager`);
+    }
   };
 };
 
