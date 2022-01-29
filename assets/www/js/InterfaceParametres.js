@@ -119,7 +119,7 @@ InterfaceParametres.prototype.setCustomCSS = function () {
   let area = document.getElementById("cssarea");
   window.localStorage.setItem("custom_css", `<style>${area.value}</style>`);
   document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend", `<style>${area.value}</style>`);
-  alert("Style set !");
+  navigator.notification.alert(`CSS set`, null, `Custom CSS`);
 
 };
 
@@ -372,7 +372,7 @@ InterfaceParametres.prototype.testFunc = function (aValue) {
     .then(r => r.text())
     .then(style => {
       if (style === "404: Not Found") {
-        alert(`Theme not found: ${aValue}`)
+        navigator.notification.alert(`Theme not found: ${aValue}`, null, `Themes manager`);
       }
       else {
         // alert(style)
