@@ -64,3 +64,10 @@ You successfully build & signed the app! You can now install it or share it!
 2) Install the app with adb: `adb install -r REDNOTE.apk`
 
 If it gives any errors, uninstall the app and install it back manually
+
+## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/26265166/0x454d505459/rednote/recent-activity/0e8d03168f962e58d808ac5e9b4258fe_badge.svg)](https://repography.com)
+[![Timeline graph](https://images.repography.com/26265166/0x454d505459/rednote/recent-activity/0e8d03168f962e58d808ac5e9b4258fe_timeline.svg)](https://github.com/0x454d505459/rednote/commits)
+[![Issue status graph](https://images.repography.com/26265166/0x454d505459/rednote/recent-activity/0e8d03168f962e58d808ac5e9b4258fe_issues.svg)](https://github.com/0x454d505459/rednote/issues)
+[![Pull request status graph](https://images.repography.com/26265166/0x454d505459/rednote/recent-activity/0e8d03168f962e58d808ac5e9b4258fe_prs.svg)](https://github.com/0x454d505459/rednote/pulls)
+[![Trending topics](https://images.repography.com/26265166/0x454d505459/rednote/recent-activity/0e8d03168f962e58d808ac5e9b4258fe_words.svg)](https://github.com/0x454d505459/rednote/commits)
+[![Top contributors](https://images.repography.com/26265166/0x454d505459/rednote/recent-activity/0e8d03168f962e58d808ac5e9b4258fe_users.svg)](https://github.com/0x454d505459/rednote/graphs/contributors)
